@@ -11,3 +11,9 @@ lint:
     - prettier@2.7.1
     - shellcheck@0.8.0
     - shfmt@3.5.0
+repo:
+  repo:
+    host: github.com
+    owner: mkell43
+    name: basedevcontainer
+  trunk_branch: main
