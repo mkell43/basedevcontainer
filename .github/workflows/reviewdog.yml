@@ -1,26 +1,9 @@
 ---
-# name: Reviewdog
-# on: [pull_request]
-# jobs:
-#   reviewdog:
-#     name: Reviewdog
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: reviewdog/action-setup@v1
-#         with:
-#           reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
-#       - name: Run Reviewdog
-#         env:
-#           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         run: |
-#           # reviewdog -reporter=github-pr-check -runners=golint,govet
-#           # or
-#           reviewdog -reporter=github-pr-review -runners=golint,govet
-name: reviewdog
+name: Reviewdog
 on: [pull_request]
 jobs:
   hadolint:
-    name: runner / hadolint
+    name: Linter / hadolint
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -31,4 +14,23 @@ jobs:
           reporter: github-pr-review # Default is github-pr-check
           fail_on_error: true
           tool_name: hadolint
-          hadolint_ignore: DL3008
+          # hadolint_ignore: DL3008
+          hadolint_flags: --config .hadolint.yaml
+  markdownlint:
+    name: Linter / markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: markdownlint
+        uses: reviewdog/action-markdownlint@v0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: reviewdog/action-actionlint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
