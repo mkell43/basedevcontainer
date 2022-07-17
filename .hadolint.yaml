@@ -1,0 +1,5 @@
+ignored:
+  - DL3008 # apt version pinning
+  # Following source doesn't work in most setups
+  # - SC1090
+  # - SC1091
