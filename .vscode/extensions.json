@@ -11,6 +11,7 @@
     "foxundermoon.shell-format",
     "timonwong.shellcheck",
     "gruntfuggly.todo-tree",
-    "shardulm94.trailing-spaces"
+    "shardulm94.trailing-spaces",
+    "redhat.vscode-yaml"
   ]
 }

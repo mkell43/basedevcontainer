@@ -1,3 +1,4 @@
+---
 name: Docker Hub description
 on:
   workflow_dispatch:

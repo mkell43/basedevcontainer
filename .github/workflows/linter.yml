@@ -2,10 +2,11 @@
 name: Lint
 
 on:
-  push:
-    branches-ignore: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
+  # push:
+  #   branches-ignore: [main]
+  # pull_request:
+  #   branches: [main]
 
 jobs:
   build:
