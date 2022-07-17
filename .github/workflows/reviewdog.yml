@@ -29,3 +29,5 @@ jobs:
         uses: reviewdog/action-hadolint@v1
         with:
           reporter: github-pr-review # Default is github-pr-check
+          fail_on_error: true
+          tool_name: hadolint
