@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": "trunk.io",
+  "editor.formatOnSave": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
+}

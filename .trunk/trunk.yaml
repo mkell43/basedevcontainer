@@ -1,0 +1,19 @@
+version: 0.1
+cli:
+  version: 0.15.0-beta
+lint:
+  enabled:
+    - actionlint@1.6.15
+    - git-diff-check@SYSTEM
+    - gitleaks@8.8.12
+    - hadolint@2.10.0
+    - markdownlint@0.32.0
+    - prettier@2.7.1
+    - shellcheck@0.8.0
+    - shfmt@3.5.0
+repo:
+  repo:
+    host: github.com
+    owner: mkell43
+    name: basedevcontainer
+  trunk_branch: main
