@@ -28,8 +28,9 @@ jobs:
           tool_name: markdownlint
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
-          flags: --config .markdownlint.yaml .
+          markdownlint_flags: --config .markdownlint.yaml .
   actionlint:
+    name: Linter / actionlint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
